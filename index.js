@@ -1,3 +1,34 @@
+/* ----Site-wide cursor----- */
+  const site_wide_cursor = document.querySelector('.custom-cursor.site-wide');
+
+  document.addEventListener('mousemove', function (evt) {
+    site_wide_cursor.style.left = evt.pageX + 'px';
+    site_wide_cursor.style.top = evt.pageY + 'px';
+    site_wide_cursor.style.display = 'block';
+  });
+
+  document.addEventListener('mousedown', function () {
+    site_wide_cursor.classList.add('active');
+  });
+
+  document.addEventListener('mouseup', function () {
+    site_wide_cursor.classList.remove('active');
+  });
+
+  // Box Bound Cursors - This part might need adjustments based on your needs
+  const boxes = document.querySelectorAll('.boxes .box');
+
+  boxes.forEach(box => {
+    box.addEventListener('mouseenter', function () {
+      site_wide_cursor.style.display = 'none';
+    });
+
+    box.addEventListener('mouseleave', function () {
+      site_wide_cursor.style.display = 'block';
+    });
+  });
+
+
 /* ----head----- */
 document.addEventListener('DOMContentLoaded', (event) => {
   const audioPlayer = new Audio();
