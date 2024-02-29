@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,24 +13,24 @@
 
 <body>
   <section class="header">
-    <nav>
-      <a href="index1.html">
-        <h1 class="weijiazhuhovertext spoken" data-audioFile="./intro.mp3">Weijia Zhu</h1>
+    <nav> 
+      <a href="index.html">
+        <h1 class="weijiazhuhovertext spoken" data-audioFile="sounds/intro.mp3">Weijia Zhu</h1>
       </a>
-      <audio id="weijiazhuaudioPlayer" src="pic/51miz-S212356-F033105B.mp3 "></audio>
+      <!-- <audio id="weijiazhuaudioPlayer" src="pic/51miz-S212356-F033105B.mp3 "></audio> -->
       <div class="nav-links">
         <ul>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#aboutme">About</a></li>
-          <li><a href="#contact">contact</a></li>
+          <li><a href="#projects" class="spoken" data-audioFile="sounds/intro.mp3">Projects</a></li>
+          <li><a href="#aboutme" class="spoken" data-audioFile="sounds/intro.mp3">About</a></li>
+          <li><a href="#contact" class="spoken" data-audioFile="sounds/intro.mp3">contact</a></li>
         </ul>
       </div>
     </nav>
     <!-- intro -->
-    <div class="intro">
-      <h2>she is a multimedia interactive designer researching the social effects of human relationships.</h2>
-      <h2>elle est une conceptrice interactive multimédia qui recherche les effets sociaux des relations humaines.</h2>
-      <h2> 她是一位研究人际关系社会效应的多媒体互动设计师。</h2>
+    <div class="intro" >
+      <h2 class="spoken" data-audioFile="sounds/intro.mp3">she is a multimedia interactive designer researching the social effects of human relationships.</h2>
+      <h2 class="spoken" data-audioFile="sounds/intro.mp3">elle est une conceptrice interactive multimédia qui recherche les effets sociaux des relations humaines.</h2>
+      <h2 class="spoken" data-audioFile="sounds/intro.mp3"> 她是一位研究人际关系社会效应的多媒体互动设计师。</h2>
     </div>
     <!-- speaking mouth -->
     <div class="speaking">
@@ -48,25 +48,25 @@
     <div class="projectbox">
       <div class="projectlist">
         <ul>
-          <li class="ipv" data-projectpic="ipvpic"><a href="projects/Intimate Partner Violence - Narrative Design/ipv.html">Intimate Partner
+          <li class="ipv" data-projectpic="ipvpic"><a href="projects/Consciousness Video Room- Installation">Intimate Partner
               Violence - Narrative Design</a></li>
           <li class="Embarrassing" data-projectpic="embarrassingpic"><a
               href="projects/Embarrassing Symphony - Installation/Embarrassing.html">Embarrassing Symphony -
               Installation</a></li>
-          <li class="grow"><a href="projects/grow down-installation/grow.html">grow down-installation</a></li>
-          <li class="Conversations"><a
+          <li class="grow" data-projectpic="growpic"><a href="projects/grow down-installation/grow.html">grow down-installation</a></li>
+          <li class="Conversations" data-projectpic="Conversationspic"><a
               href="projects/Conversations-Beyond Applause - Installation/Conversations.html">Conversations-Beyond
               Applause - Installation</a></li>
-          <li class="Datalogy"><a
+          <li class="Datalogy" data-projectpic="Datalogypic"><a
               href="projects/Datalogy-Myopia Rate in Media History - Installation/Datalogy.html">Datalogy-Myopia Rate in
               Media History - Installation</a></li>
-          <li class="Lutuanian"><a href="projects/Lutuanian MV - Video/Lutuanian.html">Lutuanian MV - Video</a></li>
-          <li class="Plot"><a href="projects/Plot - Video/Plot.html">Plot - Video</a></li>
-          <li class="One"><a href="projects/One Health - Installation/One.html">One Health - Installation</a></li>
-          <li class="Fish"><a href="projects/Fish Tank Interaction - Installation/Fish.html">Fish Tank Interaction -
+          <li class="Lutuanian" data-projectpic="Lutuanianpic"><a href="projects/Lutuanian MV - Video/Lutuanian.html">Lutuanian MV - Video</a></li>
+          <li class="Plot" data-projectpic="Plotpic"><a href="projects/Plot - Video/Plot.html">Plot - Video</a></li>
+          <li class="One"data-projectpic="Onepic"><a href="projects/One Health - Installation/One.html">One Health - Installation</a></li>
+          <li class="Fish" data-projectpic="Fishpic"><a href="projects/Fish Tank Interaction - Installation/Fish.html">Fish Tank Interaction -
               Installation</a></li>
-          <li class="Floating"><a href="projects/Floating - Installation/Floating.html">Floating - Installation</a></li>
-          <li class="Consciousness"><a
+          <li class="Floating"data-projectpic="Floatingpic"><a href="projects/Floating - Installation/Floating.html">Floating - Installation</a></li>
+          <li class="Consciousness" data-projectpic="Consciousnesspic"><a
               href="projects/Consciousness Video Room- Installation/Consciousness.html">Consciousness Video Room-
               Installation</a></li>
           <li><a href="">...</a></li>
@@ -75,7 +75,7 @@
       <div class="projectpics">
         <img src="pic/_MG_2149.JPG" id="ipvpic" width="500px" ;>
          <img src="pic/_MG_2149.JPG" id="embarrassingpic" width="500px">
-        <!--<img src="pic/_MG_2149.JPG" id="growpic" width="500px">
+         <img src="pic/_MG_2149.JPG" id="growpic" width="500px">
         <img src="pic/_MG_2149.JPG" id="Conversationspic" width="500px">
         <img src="pic/_MG_2149.JPG" id="Datalogypic" width="500px" >
         <img src="pic/_MG_2149.JPG" id="Lutuanianpic" width="500px" >
@@ -84,7 +84,6 @@
         <img src="pic/_MG_2149.JPG" id="Fishpic" width="500px">
         <img src="pic/_MG_2149.JPG" id="Floatingpic" width="500px" >
         <img src="pic/_MG_2149.JPG" id="Consciousnesspic" width="500px" >
-        <img src="pic/_MG_2149.JPG" id="...pic" width="500px"> -->
       </div>
     </div>
   </div>

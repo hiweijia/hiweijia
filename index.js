@@ -1,16 +1,16 @@
 /* ----head----- */
-
-const audioPlayer = new Audio();
-
-const spokenElements = document.querySelectorAll(".spoken");
-
-// TODO : test it
-spokenElements.forEach((el) => {
-  el.addEventListener("mouseover", () => {
-    audioPlayer.src = el.dataset["audioFile"];
-    audioPlayer.play();
+document.addEventListener('DOMContentLoaded', (event) => {
+  const audioPlayer = new Audio();
+  
+  const spokenElements = document.querySelectorAll(".spoken");
   });
-});
+  // TODO : test it
+  spokenElements.forEach((el) => {
+    el.addEventListener("mouseover", () => {
+      audioPlayer.src = el.dataset["audioFile"];
+      audioPlayer.play();
+    });
+  });
 
 document.addEventListener("DOMContentLoaded", (event) => {
   var imagePlayer = document.getElementById("imagePlayer");
