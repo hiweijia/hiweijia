@@ -1,80 +1,60 @@
 /* ----Site-wide cursor----- */
-  const site_wide_cursor = document.querySelector('.custom-cursor.site-wide');
+const site_wide_cursor = document.querySelector(".custom-cursor.site-wide");
 
-  document.addEventListener('mousemove', function (evt) {
-    site_wide_cursor.style.left = evt.pageX + 'px';
-    site_wide_cursor.style.top = evt.pageY + 'px';
-    site_wide_cursor.style.display = 'block';
+document.addEventListener("mousemove", function (evt) {
+  site_wide_cursor.style.left = evt.pageX + "px";
+  site_wide_cursor.style.top = evt.pageY + "px";
+  site_wide_cursor.style.display = "block";
+});
+
+document.addEventListener("mousedown", function () {
+  site_wide_cursor.classList.add("active");
+});
+
+document.addEventListener("mouseup", function () {
+  site_wide_cursor.classList.remove("active");
+});
+
+// Box Bound Cursors - This part might need adjustments based on your needs
+const boxes = document.querySelectorAll(".boxes .box");
+
+boxes.forEach((box) => {
+  box.addEventListener("mouseenter", function () {
+    site_wide_cursor.style.display = "none";
   });
 
-  document.addEventListener('mousedown', function () {
-    site_wide_cursor.classList.add('active');
+  box.addEventListener("mouseleave", function () {
+    site_wide_cursor.style.display = "block";
   });
-
-  document.addEventListener('mouseup', function () {
-    site_wide_cursor.classList.remove('active');
-  });
-
-  // Box Bound Cursors - This part might need adjustments based on your needs
-  const boxes = document.querySelectorAll('.boxes .box');
-
-  boxes.forEach(box => {
-    box.addEventListener('mouseenter', function () {
-      site_wide_cursor.style.display = 'none';
-    });
-
-    box.addEventListener('mouseleave', function () {
-      site_wide_cursor.style.display = 'block';
-    });
-  });
-
+});
 
 /* ----head----- */
-document.addEventListener('DOMContentLoaded', (event) => {
-  const audioPlayer = new Audio();
-  
+document.addEventListener("DOMContentLoaded", (event) => {
+  const audioPlayer = document.getElementById("weijiazhuaudioPlayer");
+
   const spokenElements = document.querySelectorAll(".spoken");
-  });
-  // TODO : test it
+
   spokenElements.forEach((el) => {
     el.addEventListener("mouseover", () => {
-      audioPlayer.src = el.dataset["audioFile"];
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+
+      audioPlayer.src = el.dataset["audiofile"]; // that's interesting, the "audioFile" in "data-audioFile" becomes "audiofile"
       audioPlayer.play();
+      videoPlayer.play();
+    });
+
+    el.addEventListener("mouseleave", () => {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
     });
   });
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  var imagePlayer = document.getElementById("imagePlayer");
-  var audioPlayer = document.getElementById("weijiazhuaudioPlayer");
-  var videoPlayer = document.getElementById("videoPlayer"); // 获取视频元素
-  var hoverText = document.querySelector(".weijiazhuhovertext");
-
-  if (hoverText) {
-    hoverText.addEventListener("mouseover", function () {
-      // 检查图片是否不显示
-      if (imagePlayer.style.display === "none") {
-        // 如果图片不显示，则播放音频和视频
-        if (audioPlayer.paused) {
-          audioPlayer.play();
-        }
-        if (videoPlayer.paused) {
-          videoPlayer.play(); // 播放视频
-        }
-      }
-    });
-
-    hoverText.addEventListener("mouseleave", function () {
-      // 鼠标离开时都暂停并重置音频和视频
-      if (audioPlayer) {
-        audioPlayer.pause();
-        audioPlayer.currentTime = 0;
-      }
-      if (videoPlayer) {
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0; // 暂停视频并重置播放时间
-      }
-    });
-  }
 });
 
 /* ----intro----- */
