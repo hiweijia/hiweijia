@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- the style could be in a "file.css" but I'm used to have it in the same file right up until I need some style in multiple pages, at which point I'm moving them away -->
+    <style>
+      /* declare the font so we can use it */
+      /* it's not necessary but I don't like using google font links... */
+      /* ...because of all the tracking and also because I want my websites to use my copies of the things... */
+      /* ...because what if google stops hosting this font? Should I give google the power to break the site?? */
+      @font-face {
+        font-family: "KodeMono";
+        src: url("assets/Kode_Mono/static/KodeMono-Regular.ttf");
+        font-weight: normal;
+      }
+      @font-face {
+        font-family: "KodeMono";
+        src: url("assets/Kode_Mono/static/KodeMono-Bold.ttf");
+        font-weight: bold;
+      }
+
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+      }
+
+      img {
+        /* we want the images to scale-down to the size of the container instead of having them be their real size*/
+        /* although we may want to manualy re-scale them instead to make them lighter and the page load faster */
+        object-fit: scale-down;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "KodeMono";
+
+        /* the font-weight has to be set to normal... */
+        /* ... because header elements are bold by default */
+        font-weight: normal;
+      }
+      h1:hover,
+      h2:hover,
+      h3:hover,
+      h4:hover {
+        font-weight: bold;
+      }
+
+      main {
+        /* more info here */
+        /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main article {
+        /* 1ch = 1 character wide */
+        width: 80ch; /* 80 characters wide is about 15 words which is the recommended upper limit for readability*/
+      }
+
+      #projects {
+        display: flex;
+        justify-content: space-evenly;
+
+        width: 100%; /*let's say I want to break the 80ch rule for this one*/
+      }
+      #projects > * {
+        width: 50%;
+      }
+
+      #project-images {
+        position: relative;
+      }
+      #project-images > img {
+        height: 100%;
+        /* positionning our elements with an "absolute" position will allow us to place them based on the anchor point of the closest "relative" parent*/
+        /* and if all the children have the same "top" and "left" then they will all be placed ontop of eachother, allowing us to all show them at the same spot*/
+        position: absolute;
+
+        /* because we are using the "absolute child" to "relative parent" thing we kinda have to center everything like this*/
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>This could be the "hero" section of the website</h1>
+        <p>with some talk about what should be on it</p>
+      </article>
+      <article>
+        <p>this could a first thing</p>
+        <p>and a second one</p>
+      </article>
+      <article id="projects">
+        <ul id="project-names">
+          <li>project one</li>
+          <li>project two</li>
+          <li>project with a really long name just to see how it looks like</li>
+          <li>project one</li>
+          <li>project two</li>
+          <li>project with a really long name just to see how it looks like</li>
+          <li>project one</li>
+          <li>project two</li>
+          <li>project with a really long name just to see how it looks like</li>
+          <li>project one</li>
+          <li>project two</li>
+          <li>project with a really long name just to see how it looks like</li>
+          <li>project one</li>
+          <li>project two</li>
+          <li>project with a really long name just to see how it looks like</li>
+          <li>project one</li>
+          <li>project two</li>
+          <li>project with a really long name just to see how it looks like</li>
+        </ul>
+        <div id="project-images">
+          <img src="/pic/_MG_2149.JPG" alt="" />
+          <img src="/pic/_MG_2149.JPG" alt="" />
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
